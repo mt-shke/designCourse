@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drip loader</title>
+        <link rel="stylesheet" href="css/main.scss" />
+        <script type="module" defer src="main.js"></script>
+    </head>
+    <body>
+        <div class="loader">
+            <div class="blinder-container">
+                <div class="blinder"></div>
+                <div class="blinder"></div>
+                <div class="blinder"></div>
+                <div class="blinder"></div>
+                <div class="blinder"></div>
+            </div>
+
+            <svg
+                width="84"
+                height="84"
+                viewBox="0 0 84 84"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="10"
+                            result="blur"
+                        />
+                        <feColorMatrix
+                            in="blur"
+                            type="matrix"
+                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo"
+                        />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+
+                <mask
+                    id="mask0_0_1"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="84"
+                    height="84"
+                >
+                    <circle cx="42" cy="42" r="42" fill="white" />
+                </mask>
+                <g mask="url(#mask0_0_1)" filter="url(#goo)">
+                    <path
+                        class="drip-loader"
+                        d="M42.8926 -8.45091C42.5227 -9.18303 41.4773 -9.18303 41.1074 -8.45091L32.6912 8.209C31.0087 10.2745 30 12.9106 30 15.7823C30 22.4097 35.3726 27.7823 42 27.7823C48.6274 27.7823 54 22.4097 54 15.7823C54 12.9106 52.9913 10.2745 51.3088 8.209L42.8926 -8.45091Z"
+                        fill="white"
+                    />
+                    <circle
+                        cx="42"
+                        cy="42"
+                        r="40"
+                        stroke="white"
+                        stroke-width="4"
+                    />
+                    <ellipse cx="42" cy="-16" rx="42" ry="32" fill="white" />
+                </g>
+            </svg>
+        </div>
+
+        <section>
+            <div class="mask">
+                <h1>So snazzy</h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Quae quia dolorem corrupti, nemo eius nesciunt a facere
+                    recusandae alias numquam veritatis cum ullam, perspiciatis
+                    illum. Porro.
+                </p>
+            </div>
+        </section>
+
+        <img
+            style="display: none"
+            src="lake.jpg"
+            alt="a nice view from a hidden mountain lake "
+        />
+    </body>
+</html>
